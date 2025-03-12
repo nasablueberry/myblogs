@@ -3,241 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Hemel Uddin Chowdhury - Portfolio</title>
+    <title>My Blog - Md. Hemel Uddin Chowdhury</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script> <!-- Adding Confetti Library -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #eef2f3;
+            background-color: #f9f9f9;
             color: #333;
-            overflow-x: hidden; /* Prevents horizontal scrolling */
+            line-height: 1.6;
         }
+
         header {
-            background: #004d40;
+            background-color: #004d40;
             color: white;
             padding: 20px;
             text-align: center;
         }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
         nav a {
-            margin: 0 15px;
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #004d40;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            padding: 5px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #004d40;
+            float: left;
+            display: block;
             color: white;
-            margin-top: 20px;
-        }
-        a {
-            color: #004d40;
+            padding: 14px 20px;
             text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            color: #ffcc00;
-        }
-        .contact-icons i {
-            margin-right: 10px;
-            color: #004d40;
-        }
-        /* Cheers button styles */
-        .cheers-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #ffcc00;
-            color: #004d40;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .cheers-button:hover {
-            background-color: #ffb300;
-        }
-
-        /* Cheers message styles */
-        .cheers-message {
-            display: none;
-            font-size: 24px;
-            color: #004d40;
-            margin-top: 20px;
             text-align: center;
-            font-weight: bold;
         }
 
-        /* Center the button on the page */
-        #tap-button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px; /* Adjust this value to place it where you'd like */
-        }
-
-        .tap-button {
-            padding: 15px 30px;
+        nav a:hover {
             background-color: #ffcc00;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .blog-post {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-post h2 {
+            margin: 10px;
             color: #004d40;
-            font-size: 20px;
+        }
+
+        .blog-post p {
+            margin: 0 10px 10px;
+            color: #555;
+        }
+
+        .read-more {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: #004d40;
+            color: white;
+            text-decoration: none;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
             font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
         }
 
-        .tap-button:hover {
-            background-color: #ffb300;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
+        .read-more:hover {
+            background-color: #ffcc00;
         }
 
-        .tap-button:focus {
-            outline: none;
-            .my-blogs-button {
-    margin: 0 15px;
-    color: #ffcc00;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
-.my-blogs-button:hover {
-    color: #004d40;
-}
-
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1><i class="fas fa-user"></i> Md. Hemel Uddin Chowdhury</h1>
-        <p><i class="fas fa-map-marker-alt"></i> Badda Link road, Dhaka-1219, Bangladesh | 
-           <i class="fas fa-phone"></i> +8801739985924 | 
-           <i class="fas fa-envelope"></i> <a href="mailto:hemeluddin1612602930@gmail.com" style="color: #ffcc00;">hemeluddin1612602930@gmail.com</a>
-        </p>
-        <nav>
-            <a href="#profile"><i class="fas fa-user"></i> Profile</a>
-            <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-            <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-            <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-            <a href="#leadership"><i class="fas fa-users"></i> Leadership</a>
-            <a href="#contact"><i class="fas fa-address-book"></i> Contact</a>
-            <!-- New "My Blogs" Button -->
-            <a href="https://nasablueberry.github.io/myblogs/" target="_blank" class="my-blogs-button"><i class="fas fa-blog"></i> My Blogs</a>
-        </nav>        
+        <h1>Md. Hemel Uddin Chowdhury's Blog</h1>
+        <p>Welcome to my personal blog! Here I share my thoughts, experiences, and more.</p>
     </header>
-    
 
-    <section id="profile">
-        <h2><i class="fas fa-user-circle"></i> Profile Statement</h2>
-        <p>Self-driven and enthusiastic professional passionate about content creation, digital marketing, and AI-driven tools.</p>
-    </section>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <section id="experience">
-        <h2><i class="fas fa-briefcase"></i> Experience</h2>
-        <div>
-            <h3>Maroon Inc (Apr '23 – May '24)</h3>
-            <p>Content Manager - Led content team, created pitch slides, optimized social media posts.</p>
-        </div>
-        <div>
-            <h3>Shouptik Production (Jan '22 – Ongoing)</h3>
-            <p>Content Lead - Managed content team, created scripts, and developed marketing strategies.</p>
-        </div>
-    </section>
+    <div class="container">
+        <section class="blog-posts">
+            <!-- Blog Post 1 -->
+            <div class="blog-post">
+                <img src="https://via.placeholder.com/600x300" alt="Blog Post 1">
+                <h2>How to Build a Personal Brand</h2>
+                <p>Building a personal brand is essential for professionals today. In this post, I'll share tips and tricks on how you can build and maintain a strong personal brand...</p>
+                <a href="blog-post1.html" class="read-more">Read More</a>
+            </div>
 
-    <section id="skills">
-        <h2><i class="fas fa-tools"></i> Skill Sets</h2>
-        <ul>
-            <li><i class="fas fa-code"></i> Programming</li>
-            <li><i class="fas fa-chalkboard-teacher"></i> Teaching</li>
-            <li><i class="fas fa-user-tie"></i> Leadership</li>
-            <li><i class="fas fa-search"></i> SEO</li>
-            <li><i class="fas fa-table"></i> Google Sheets</li>
-            <li><i class="fas fa-pen"></i> Blog Writing</li>
-        </ul>
-    </section>
+            <!-- Blog Post 2 -->
+            <div class="blog-post">
+                <img src="https://via.placeholder.com/600x300" alt="Blog Post 2">
+                <h2>The Future of AI in Content Creation</h2>
+                <p>Artificial Intelligence is transforming content creation. In this article, I discuss the latest trends in AI and how it will impact the creative industry...</p>
+                <a href="blog-post2.html" class="read-more">Read More</a>
+            </div>
 
-    <section id="education">
-        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-        <div>
-            <h3>BRAC University (Sep '22 – Present)</h3>
-            <p>Bachelor's in Computer Science, Expected Graduation: Aug 2026</p>
-        </div>
-    </section>
+            <!-- Blog Post 3 -->
+            <div class="blog-post">
+                <img src="https://via.placeholder.com/600x300" alt="Blog Post 3">
+                <h2>Effective Digital Marketing Strategies for 2025</h2>
+                <p>As we move into 2025, digital marketing continues to evolve. This post highlights the best strategies for businesses to implement for success in the coming year...</p>
+                <a href="blog-post3.html" class="read-more">Read More</a>
+            </div>
 
-    <section id="leadership">
-        <h2><i class="fas fa-users"></i> Leadership & Extracurricular</h2>
-        <div>
-            <h3>BRAC University Computer Club - Director of Communication & Marketing</h3>
-            <p>Coordinated events and managed communication strategies.</p>
-        </div>
-        <div>
-            <h3>BRAC University Debate Club - Assistant Director of HR</h3>
-            <p>Developed interpersonal skills and managed HR activities.</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2><i class="fas fa-address-book"></i> Contact</h2>
-        <div class="contact-icons">
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hemeluddin1612602930@gmail.com">hemeluddin1612602930@gmail.com</a></p>
-            <p><i class="fas fa-phone"></i> Phone: +8801739985924</p>
-            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/hemel-ch0wdhury/">linkedin.com/in/hemel-ch0wdhury/</a></p>
-            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/nasablueberry">github.com/nasablueberry</a></p>
-        </div>
-
-        <!-- Centered TAP ON ME Button -->
-        <div id="tap-button-container">
-            <button class="tap-button" onclick="showCheers()">TAP ON ME FOR SURPRISE!</button>
-        </div>
-
-        <p id="cheers-message" class="cheers-message">Thank you so much for visiting my BASIC CV :), Cheers! 🥂</p>
-    </section>
+            <!-- Add more blog posts here -->
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Md. Hemel Uddin Chowdhury. All rights reserved.</p>
     </footer>
-
-    <script>
-        function showCheers() {
-            // Display the Cheers message
-            document.getElementById("cheers-message").style.display = "block";
-            
-            // Trigger confetti animation
-            confetti({
-                particleCount: 100,
-                spread: 90,
-                origin: { y: 0.6 }  // Starting point for confetti
-            });
-        }
-    </script>
 </body>
 </html>
